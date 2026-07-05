@@ -10,18 +10,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #100E1F;
-    --bg-soft: #17142B;
-    --card: #1D1937;
-    --card-border: #322C55;
-    --text: #F4F2FF;
-    --text-soft: #A79FD4;
+    --bg: #E7FBF6;
+    --bg-soft: #F3FDFA;
+    --card: #FFFFFF;
+    --card-border: #D3F0E6;
+    --text: #170B45;
+    --text-soft: #5B6178;
 
-    --node: #37E6C4;   /* Node.js / API layer */
-    --dotnet: #8C7CFF; /* .NET / Xamarin / Angular */
-    --sql: #FF6F91;    /* MySQL / MS SQL */
-    --redis: #FFB454;  /* Redis / streams */
-    --azure: #4FC3F7;  /* Azure / cloud & AI */
+    --node: #34C9A0;   /* Node.js / API layer — mint green */
+    --dotnet: #6D5BE0; /* .NET / Xamarin / Angular — violet */
+    --sql: #E14F82;    /* MySQL / MS SQL — rose */
+    --redis: #E0932B;  /* Redis / streams — amber */
+    --azure: #3B82F6;  /* Azure / cloud & AI — bright blue */
+
+    --node-ink: #17916E;
+    --dotnet-ink: #5342C7;
+    --sql-ink: #C4306A;
+    --redis-ink: #B9740E;
+    --azure-ink: #1D63D6;
 
     --max: 960px;
   }
@@ -39,13 +45,13 @@
   }
 
   a { color: inherit; }
-  ::selection { background: var(--dotnet); color: #0B0918; }
+  ::selection { background: var(--dotnet); color: #FFFFFF; }
 
   .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
   /* ===== Ambient gradient mesh ===== */
   .mesh{ position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-  .blob{ position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.55; }
+  .blob{ position: absolute; border-radius: 50%; filter: blur(110px); opacity: 0.32; }
   .blob.b1{ width: 480px; height: 480px; background: var(--node); top: -160px; left: -120px; animation: float1 22s ease-in-out infinite; }
   .blob.b2{ width: 420px; height: 420px; background: var(--dotnet); top: 120px; right: -140px; animation: float2 26s ease-in-out infinite; }
   .blob.b3{ width: 380px; height: 380px; background: var(--sql); bottom: -140px; left: 20%; animation: float3 20s ease-in-out infinite; }
@@ -62,7 +68,7 @@
   .eyebrow{
     font-family:'JetBrains Mono', monospace;
     font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--node); display:flex; align-items:center; gap: 10px; margin-bottom: 22px;
+    color: var(--node-ink); display:flex; align-items:center; gap: 10px; margin-bottom: 22px;
   }
   .eyebrow::before{ content:''; width: 8px; height: 8px; background: var(--node); border-radius: 50%; display:inline-block; box-shadow: 0 0 12px var(--node); }
 
@@ -73,7 +79,7 @@
     line-height: 1.0;
     margin: 0 0 16px;
     letter-spacing: -0.01em;
-    background: linear-gradient(100deg, #FFFFFF 20%, var(--node) 55%, var(--dotnet) 85%);
+    background: linear-gradient(100deg, var(--text) 15%, var(--dotnet) 55%, var(--node) 90%);
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
 
@@ -102,7 +108,7 @@
   }
   .btn:hover{ transform: translateY(-2px); }
   .btn:focus-visible{ outline: 2px solid var(--node); outline-offset: 3px; }
-  .btn.primary{ background: linear-gradient(120deg, var(--node), var(--dotnet)); color: #0B0918; font-weight: 600; }
+  .btn.primary{ background: linear-gradient(120deg, var(--azure), var(--dotnet)); color: #FFFFFF; font-weight: 600; }
   .btn.primary:hover{ box-shadow: 0 8px 24px -6px var(--dotnet); }
   .btn.ghost{ background: var(--card); color: var(--text); border: 1px solid var(--card-border); }
   .btn.ghost:hover{ border-color: var(--dotnet); box-shadow: 0 8px 24px -10px var(--dotnet); }
@@ -111,21 +117,42 @@
   section{ padding: 80px 0; position: relative; }
 
   .section-tag{ font-family:'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 8px; }
-  #experience .section-tag{ color: var(--dotnet); }
-  #skills .section-tag{ color: var(--node); }
-  #projects .section-tag{ color: var(--sql); }
-  #recent .section-tag{ color: var(--redis); }
-  #education .section-tag{ color: var(--node); }
+  #summary .section-tag{ color: var(--azure-ink); }
+  #experience .section-tag{ color: var(--dotnet-ink); }
+  #skills .section-tag{ color: var(--node-ink); }
+  #projects .section-tag{ color: var(--sql-ink); }
+  #recent .section-tag{ color: var(--redis-ink); }
+  #education .section-tag{ color: var(--node-ink); }
 
   h2{ font-family:'Fraunces', serif; font-weight: 700; font-size: clamp(28px, 4vw, 40px); margin: 0 0 34px; letter-spacing: -0.01em; }
   p.lede{ max-width: 640px; color: var(--text-soft); font-size: 16px; }
+
+  /* ===== Summary ===== */
+  #summary{ padding-top: 20px; }
+  .summary-card{
+    background: var(--card); border: 1px solid var(--card-border); border-radius: 14px;
+    padding: 36px 40px;
+  }
+  .summary-card p{ color: var(--text-soft); font-size: 15.5px; max-width: 780px; margin: 0 0 16px; }
+  .summary-card p:last-child{ margin-bottom: 0; }
+  .summary-card strong{ color: var(--text); font-weight: 600; }
+  .strengths-grid{
+    display:grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 12px; margin-top: 26px;
+  }
+  .strength-pill{
+    display:flex; align-items:flex-start; gap: 10px;
+    background: var(--bg-soft); border: 1px solid var(--card-border); border-radius: 10px;
+    padding: 12px 16px; font-size: 13.5px; color: var(--text);
+  }
+  .strength-pill .dot{ flex: none; width: 6px; height: 6px; margin-top: 6px; border-radius: 50%; background: var(--azure); box-shadow: 0 0 8px var(--azure); }
 
   /* ===== Experience ===== */
   .job{ padding: 26px 0; border-bottom: 1px solid var(--card-border); }
   .job:last-child{ border-bottom: none; }
   .job-head{ display:flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 6px; }
   .job-title{ font-family:'Fraunces', serif; font-size: 20px; font-weight: 700; }
-  .job-dates{ font-family:'JetBrains Mono', monospace; font-size: 12.5px; color: var(--dotnet); }
+  .job-dates{ font-family:'JetBrains Mono', monospace; font-size: 12.5px; color: var(--dotnet-ink); }
   .job-company{ color: var(--text-soft); font-size: 14.5px; margin-bottom: 14px; }
   .job ul{ margin: 0; padding-left: 20px; color: var(--text-soft); font-size: 14.5px; }
   .job li{ margin-bottom: 6px; }
@@ -138,12 +165,12 @@
     border-top: 3px solid var(--accent, var(--node)); transition: transform .2s ease, box-shadow .2s ease;
   }
   .skill-card:hover{ transform: translateY(-4px); box-shadow: 0 16px 32px -16px var(--accent, var(--node)); }
-  .skill-card.node{ --accent: var(--node); }
-  .skill-card.dotnet{ --accent: var(--dotnet); }
-  .skill-card.sql{ --accent: var(--sql); }
-  .skill-card.redis{ --accent: var(--redis); }
-  .skill-card.azure{ --accent: var(--azure); }
-  .skill-card h3{ font-family:'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent, var(--node)); margin: 0 0 16px; }
+  .skill-card.node{ --accent: var(--node); --accent-ink: var(--node-ink); }
+  .skill-card.dotnet{ --accent: var(--dotnet); --accent-ink: var(--dotnet-ink); }
+  .skill-card.sql{ --accent: var(--sql); --accent-ink: var(--sql-ink); }
+  .skill-card.redis{ --accent: var(--redis); --accent-ink: var(--redis-ink); }
+  .skill-card.azure{ --accent: var(--azure); --accent-ink: var(--azure-ink); }
+  .skill-card h3{ font-family:'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink, var(--node-ink)); margin: 0 0 16px; }
   .skill-card ul{ list-style:none; margin:0; padding:0; }
   .skill-card li{ padding: 8px 0; border-bottom: 1px solid var(--card-border); font-size: 14.5px; color: var(--text); }
   .skill-card li:last-child{ border-bottom: none; }
@@ -152,16 +179,16 @@
   .project{ display:grid; grid-template-columns: 8px 1fr; gap: 26px; padding: 30px 0; border-bottom: 1px solid var(--card-border); }
   .project:last-child{ border-bottom: none; }
   .project .bar{ border-radius: 4px; background: var(--accent, var(--node)); box-shadow: 0 0 16px var(--accent, var(--node)); }
-  .project.node{ --accent: var(--node); }
-  .project.dotnet{ --accent: var(--dotnet); }
-  .project.sql{ --accent: var(--sql); }
-  .project.redis{ --accent: var(--redis); }
-  .project.azure{ --accent: var(--azure); }
+  .project.node{ --accent: var(--node); --accent-ink: var(--node-ink); }
+  .project.dotnet{ --accent: var(--dotnet); --accent-ink: var(--dotnet-ink); }
+  .project.sql{ --accent: var(--sql); --accent-ink: var(--sql-ink); }
+  .project.redis{ --accent: var(--redis); --accent-ink: var(--redis-ink); }
+  .project.azure{ --accent: var(--azure); --accent-ink: var(--azure-ink); }
   .project h3{ font-family:'Fraunces', serif; font-size: 21px; font-weight: 700; margin: 0 0 6px; color: var(--text); }
   .project .project-meta{ font-family:'JetBrains Mono', monospace; font-size: 11.5px; color: var(--text-soft); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.04em; }
   .project p{ color: var(--text-soft); margin: 0 0 16px; font-size: 15px; max-width: 620px; }
   .tag-row{ display:flex; flex-wrap:wrap; gap: 8px; }
-  .tag{ font-family:'JetBrains Mono', monospace; font-size: 11.5px; padding: 5px 12px; background: var(--bg-soft); border: 1px solid var(--card-border); border-radius: 100px; color: var(--accent, var(--node)); }
+  .tag{ font-family:'JetBrains Mono', monospace; font-size: 11.5px; padding: 5px 12px; background: var(--bg-soft); border: 1px solid var(--card-border); border-radius: 100px; color: var(--accent-ink, var(--node-ink)); }
 
   /* ===== Education ===== */
   .edu-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
@@ -173,14 +200,14 @@
   footer{ padding: 80px 0 100px; }
   .contact-card{
     background: linear-gradient(135deg, var(--node) 0%, var(--dotnet) 55%, var(--sql) 100%);
-    color: #0B0918; border-radius: 16px; padding: 50px;
+    color: #FFFFFF; border-radius: 16px; padding: 50px;
     display:flex; flex-wrap: wrap; gap: 30px; align-items:center; justify-content: space-between;
   }
-  .contact-card h2{ color: #0B0918; margin: 0 0 8px; }
-  .contact-card p{ color: rgba(11,9,24,0.75); margin:0; max-width: 380px; font-size: 14.5px; font-weight: 500; }
-  .contact-card .btn.primary{ background: #0B0918; color: #F4F2FF; }
+  .contact-card h2{ color: #FFFFFF; margin: 0 0 8px; }
+  .contact-card p{ color: rgba(255,255,255,0.85); margin:0; max-width: 380px; font-size: 14.5px; font-weight: 500; }
+  .contact-card .btn.primary{ background: var(--text); color: #FFFFFF; }
   .contact-card .btn.primary:hover{ box-shadow: 0 8px 24px -6px rgba(0,0,0,0.4); }
-  .contact-card .btn.ghost{ background: rgba(11,9,24,0.08); color: #0B0918; border: 1px solid rgba(11,9,24,0.25); }
+  .contact-card .btn.ghost{ background: rgba(255,255,255,0.16); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.4); }
 
   .fine-print{ text-align:center; font-family:'JetBrains Mono', monospace; font-size: 12px; color: var(--text-soft); margin-top: 34px; }
 
@@ -191,6 +218,7 @@
     .contact-card{ padding: 34px; }
     .blob{ filter: blur(60px); opacity: 0.4; }
     .job-head{ flex-direction: column; }
+    .summary-card{ padding: 26px 24px; }
   }
 </style>
 </head>
@@ -209,9 +237,9 @@
     <div class="eyebrow">Available for opportunities</div>
     <h1>Sushil Kumar</h1>
     <p class="role">
-      <strong>.NET &amp; Backend Developer</strong> with 10+ years building
-      web admin panels, cross-platform mobile apps, and multi-tenant SaaS
-      billing systems.
+      <strong>Backend-focused Software Developer</strong> with <strong>10+
+      years of experience</strong> building scalable, multi-tenant SaaS
+      systems across messaging, ERP, and logistics domains.
     </p>
     <div class="contact-line">
       <span>📍 New Delhi, India</span>
@@ -226,6 +254,45 @@
       <a class="btn ghost" href="https://github.com/sushil1623" target="_blank" rel="noopener">GitHub</a>
     </div>
   </header>
+
+  <section id="summary">
+    <p class="section-tag">Summary</p>
+    <h2>Professional summary</h2>
+    <div class="summary-card">
+      <p>
+        Backend-focused Software Developer with <strong>10+ years of
+        experience</strong> building scalable, multi-tenant SaaS systems
+        across messaging, ERP, and logistics domains. Proficient in
+        <strong>.NET Framework, .NET Core, Xamarin.Forms, and Angular</strong>,
+        with deep expertise in <strong>MS SQL Server and MySQL</strong> —
+        including complex stored procedure design, transaction-safe
+        billing/ledger systems, and high-throughput data pipelines.
+      </p>
+      <p>
+        Currently working on a WhatsApp Business messaging platform
+        (<strong>Node.js/Express, MySQL, MongoDB, Redis</strong>), building
+        coin-based billing systems, Redis Streams-based webhook processing
+        with crash recovery, and multi-tenant campaign scheduling
+        infrastructure. Also delivered stored-procedure-driven modules for a
+        jewelry ERP system (<strong>ASP.NET Core, .NET MAUI, Dapper</strong>)
+        and contributed to a transport/logistics mobile app built on
+        <strong>.NET MAUI</strong>.
+      </p>
+      <p>
+        Relies on <strong>GitHub Copilot</strong> to accelerate development
+        without compromising code quality, with strong attention to
+        transactional integrity, data consistency, and API design across the
+        full stack — from database internals to mobile and web front-ends.
+      </p>
+      <div class="strengths-grid">
+        <div class="strength-pill"><span class="dot"></span>MySQL / MS SQL — stored procedures, JSON aggregation, keyset pagination, transaction handling</div>
+        <div class="strength-pill"><span class="dot"></span>.NET Core / .NET Framework / Xamarin.Forms — API and mobile app development</div>
+        <div class="strength-pill"><span class="dot"></span>Angular — front-end integration for enterprise applications</div>
+        <div class="strength-pill"><span class="dot"></span>Multi-tenant SaaS architecture &amp; billing systems</div>
+        <div class="strength-pill"><span class="dot"></span>AI-assisted development with GitHub Copilot</div>
+      </div>
+    </div>
+  </section>
 
   <section id="experience">
     <p class="section-tag">Experience</p>
@@ -285,23 +352,23 @@
         <h3>Databases</h3>
         <ul>
           <li>MS SQL Server 2019</li>
-          <li>MySQL — stored procedures, ledgers</li>
-  
+          <li>MySQL — stored procedures, JSON aggregation, keyset pagination</li>
+          <li>MongoDB — aggregation pipelines</li>
         </ul>
       </div>
       <div class="skill-card node">
-        <h3>Web &amp; Frontend</h3>
+        <h3>Web &amp; Backend</h3>
         <ul>
+          <li>Node.js / Express</li>
           <li>Angular, JavaScript, Ajax</li>
           <li>HTML, CSS, ASP</li>
-  
         </ul>
       </div>
       <div class="skill-card redis">
         <h3>Infra &amp; Tooling</h3>
         <ul>
           <li>Redis / Redis Streams</li>
-          <li>GitHub Copilot</li>
+          <li>GitHub Copilot — AI-assisted development</li>
           <li>Dapper, FluentValidation, DevExpress</li>
         </ul>
       </div>
@@ -327,15 +394,17 @@
       <div class="bar"></div>
       <div>
         <h3>WhatsApp Business Messaging Platform</h3>
-        <div class="project-meta">Node.js / Express · Multi-tenant SaaS</div>
+        <div class="project-meta">Node.js/Express, MySQL, MongoDB, Redis · Multi-tenant SaaS</div>
         <p>
           Designed the coin-based billing and ledger system, a Redis Streams
           webhook pipeline with crash recovery and dead-letter handling, and
           a rate-limited campaign scheduler for fair delivery across tenants.
         </p>
         <div class="tag-row">
-          <span class="tag">.NET Core</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Express</span>
           <span class="tag">MySQL</span>
+          <span class="tag">MongoDB</span>
           <span class="tag">Redis Streams</span>
         </div>
       </div>
@@ -345,7 +414,7 @@
       <div class="bar"></div>
       <div>
         <h3>Jewelry ERP System</h3>
-        <div class="project-meta">ASP.NET Core · .NET MAUI</div>
+        <div class="project-meta">ASP.NET Core · .NET MAUI · Dapper</div>
         <p>
           Stored-procedure-driven ERP for inventory and tagging. Built bulk
           Excel import pipelines, a layered tag-printing settings chain, and
@@ -356,6 +425,21 @@
           <span class="tag">.NET MAUI</span>
           <span class="tag">Dapper</span>
           <span class="tag">MySQL</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project dotnet">
+      <div class="bar"></div>
+      <div>
+        <h3>Transport &amp; Logistics Mobile App</h3>
+        <div class="project-meta">.NET MAUI</div>
+        <p>
+          Contributed to a cross-platform logistics mobile app, working on
+          backend integration and mobile app features on the .NET MAUI stack.
+        </p>
+        <div class="tag-row">
+          <span class="tag">.NET MAUI</span>
         </div>
       </div>
     </div>
