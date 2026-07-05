@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sushil — Backend Developer</title>
-<meta name="description" content="Backend developer specializing in multi-tenant SaaS systems, MySQL/MS SQL, .NET, Angular, and billing infrastructure." />
+<title>Sushil Kumar — .NET & Backend Developer</title>
+<meta name="description" content=".NET, Xamarin, and backend developer with experience across web admin panels, mobile apps, and multi-tenant SaaS billing systems." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -21,6 +21,7 @@
     --dotnet: #8C7CFF; /* .NET / Xamarin / Angular */
     --sql: #FF6F91;    /* MySQL / MS SQL */
     --redis: #FFB454;  /* Redis / streams */
+    --azure: #4FC3F7;  /* Azure / cloud & AI */
 
     --max: 960px;
   }
@@ -43,57 +44,27 @@
   .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
   /* ===== Ambient gradient mesh ===== */
-  .mesh{
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
-  .blob{
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.55;
-  }
+  .mesh{ position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .blob{ position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.55; }
   .blob.b1{ width: 480px; height: 480px; background: var(--node); top: -160px; left: -120px; animation: float1 22s ease-in-out infinite; }
   .blob.b2{ width: 420px; height: 420px; background: var(--dotnet); top: 120px; right: -140px; animation: float2 26s ease-in-out infinite; }
   .blob.b3{ width: 380px; height: 380px; background: var(--sql); bottom: -140px; left: 20%; animation: float3 20s ease-in-out infinite; }
   .blob.b4{ width: 300px; height: 300px; background: var(--redis); bottom: 10%; right: 10%; opacity: 0.35; animation: float1 30s ease-in-out infinite reverse; }
 
-  @keyframes float1{
-    0%,100% { transform: translate(0,0) scale(1); }
-    50% { transform: translate(40px, 30px) scale(1.08); }
-  }
-  @keyframes float2{
-    0%,100% { transform: translate(0,0) scale(1); }
-    50% { transform: translate(-30px, 50px) scale(0.95); }
-  }
-  @keyframes float3{
-    0%,100% { transform: translate(0,0) scale(1); }
-    50% { transform: translate(30px, -40px) scale(1.1); }
-  }
-  @media (prefers-reduced-motion: reduce){
-    .blob{ animation: none !important; }
-  }
+  @keyframes float1{ 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(40px, 30px) scale(1.08); } }
+  @keyframes float2{ 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-30px, 50px) scale(0.95); } }
+  @keyframes float3{ 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px, -40px) scale(1.1); } }
+  @media (prefers-reduced-motion: reduce){ .blob{ animation: none !important; } }
 
   /* ===== Header / hero ===== */
   header.hero{ padding: 100px 0 50px; }
 
   .eyebrow{
     font-family:'JetBrains Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--node);
-    display:flex; align-items:center; gap: 10px;
-    margin-bottom: 22px;
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--node); display:flex; align-items:center; gap: 10px; margin-bottom: 22px;
   }
-  .eyebrow::before{
-    content:''; width: 8px; height: 8px;
-    background: var(--node); border-radius: 50%; display:inline-block;
-    box-shadow: 0 0 12px var(--node);
-  }
+  .eyebrow::before{ content:''; width: 8px; height: 8px; background: var(--node); border-radius: 50%; display:inline-block; box-shadow: 0 0 12px var(--node); }
 
   h1{
     font-family:'Fraunces', serif;
@@ -103,156 +74,107 @@
     margin: 0 0 16px;
     letter-spacing: -0.01em;
     background: linear-gradient(100deg, #FFFFFF 20%, var(--node) 55%, var(--dotnet) 85%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
   }
 
-  .role{
-    font-size: clamp(16px, 2vw, 19px);
-    color: var(--text-soft);
-    max-width: 580px;
-    margin: 0 0 36px;
-  }
+  .role{ font-size: clamp(16px, 2vw, 19px); color: var(--text-soft); max-width: 580px; margin: 0 0 22px; }
   .role strong{ color: var(--text); font-weight: 600; }
+
+  .contact-line{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-soft);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin: 0 0 34px;
+  }
+  .contact-line a{ color: var(--text-soft); text-decoration: none; border-bottom: 1px dotted var(--card-border); }
+  .contact-line a:hover{ color: var(--node); border-color: var(--node); }
 
   .cta-row{ display:flex; gap: 14px; flex-wrap: wrap; }
 
   .btn{
-    font-family:'JetBrains Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 0.02em;
-    text-decoration:none;
-    padding: 14px 24px;
-    border-radius: 8px;
+    font-family:'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.02em;
+    text-decoration:none; padding: 14px 24px; border-radius: 8px;
     display:inline-flex; align-items:center; gap: 8px;
-    transition: transform .15s ease, box-shadow .2s ease;
-    cursor: pointer;
-    border: none;
+    transition: transform .15s ease, box-shadow .2s ease; cursor: pointer; border: none;
   }
   .btn:hover{ transform: translateY(-2px); }
   .btn:focus-visible{ outline: 2px solid var(--node); outline-offset: 3px; }
-
-  .btn.primary{
-    background: linear-gradient(120deg, var(--node), var(--dotnet));
-    color: #0B0918;
-    font-weight: 600;
-  }
+  .btn.primary{ background: linear-gradient(120deg, var(--node), var(--dotnet)); color: #0B0918; font-weight: 600; }
   .btn.primary:hover{ box-shadow: 0 8px 24px -6px var(--dotnet); }
-
   .btn.ghost{ background: var(--card); color: var(--text); border: 1px solid var(--card-border); }
   .btn.ghost:hover{ border-color: var(--dotnet); box-shadow: 0 8px 24px -10px var(--dotnet); }
 
   /* ===== Sections ===== */
   section{ padding: 80px 0; position: relative; }
 
-  .section-tag{
-    font-family:'JetBrains Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin: 0 0 8px;
-  }
+  .section-tag{ font-family:'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 8px; }
+  #experience .section-tag{ color: var(--dotnet); }
   #skills .section-tag{ color: var(--node); }
   #projects .section-tag{ color: var(--sql); }
+  #recent .section-tag{ color: var(--redis); }
+  #education .section-tag{ color: var(--node); }
 
-  h2{
-    font-family:'Fraunces', serif;
-    font-weight: 700;
-    font-size: clamp(28px, 4vw, 40px);
-    margin: 0 0 34px;
-    letter-spacing: -0.01em;
-  }
-
+  h2{ font-family:'Fraunces', serif; font-weight: 700; font-size: clamp(28px, 4vw, 40px); margin: 0 0 34px; letter-spacing: -0.01em; }
   p.lede{ max-width: 640px; color: var(--text-soft); font-size: 16px; }
 
+  /* ===== Experience ===== */
+  .job{ padding: 26px 0; border-bottom: 1px solid var(--card-border); }
+  .job:last-child{ border-bottom: none; }
+  .job-head{ display:flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+  .job-title{ font-family:'Fraunces', serif; font-size: 20px; font-weight: 700; }
+  .job-dates{ font-family:'JetBrains Mono', monospace; font-size: 12.5px; color: var(--dotnet); }
+  .job-company{ color: var(--text-soft); font-size: 14.5px; margin-bottom: 14px; }
+  .job ul{ margin: 0; padding-left: 20px; color: var(--text-soft); font-size: 14.5px; }
+  .job li{ margin-bottom: 6px; }
+  .job li strong{ color: var(--text); }
+
   /* ===== Skills ===== */
-  .skill-groups{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 22px;
-    margin-top: 10px;
-  }
+  .skill-groups{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; margin-top: 10px; }
   .skill-card{
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: 12px;
-    padding: 24px;
-    border-top: 3px solid var(--accent, var(--node));
-    transition: transform .2s ease, box-shadow .2s ease;
+    background: var(--card); border: 1px solid var(--card-border); border-radius: 12px; padding: 24px;
+    border-top: 3px solid var(--accent, var(--node)); transition: transform .2s ease, box-shadow .2s ease;
   }
   .skill-card:hover{ transform: translateY(-4px); box-shadow: 0 16px 32px -16px var(--accent, var(--node)); }
   .skill-card.node{ --accent: var(--node); }
   .skill-card.dotnet{ --accent: var(--dotnet); }
   .skill-card.sql{ --accent: var(--sql); }
   .skill-card.redis{ --accent: var(--redis); }
-
-  .skill-card h3{
-    font-family:'JetBrains Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent, var(--node));
-    margin: 0 0 16px;
-  }
+  .skill-card.azure{ --accent: var(--azure); }
+  .skill-card h3{ font-family:'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent, var(--node)); margin: 0 0 16px; }
   .skill-card ul{ list-style:none; margin:0; padding:0; }
-  .skill-card li{
-    padding: 8px 0;
-    border-bottom: 1px solid var(--card-border);
-    font-size: 14.5px;
-    color: var(--text);
-  }
+  .skill-card li{ padding: 8px 0; border-bottom: 1px solid var(--card-border); font-size: 14.5px; color: var(--text); }
   .skill-card li:last-child{ border-bottom: none; }
 
   /* ===== Projects ===== */
-  .project{
-    display:grid;
-    grid-template-columns: 8px 1fr;
-    gap: 26px;
-    padding: 30px 0;
-    border-bottom: 1px solid var(--card-border);
-  }
+  .project{ display:grid; grid-template-columns: 8px 1fr; gap: 26px; padding: 30px 0; border-bottom: 1px solid var(--card-border); }
   .project:last-child{ border-bottom: none; }
-  .project .bar{
-    border-radius: 4px;
-    background: var(--accent, var(--node));
-    box-shadow: 0 0 16px var(--accent, var(--node));
-  }
+  .project .bar{ border-radius: 4px; background: var(--accent, var(--node)); box-shadow: 0 0 16px var(--accent, var(--node)); }
   .project.node{ --accent: var(--node); }
   .project.dotnet{ --accent: var(--dotnet); }
   .project.sql{ --accent: var(--sql); }
-
-  .project h3{
-    font-family:'Fraunces', serif;
-    font-size: 23px;
-    font-weight: 700;
-    margin: 0 0 10px;
-    color: var(--text);
-  }
+  .project.redis{ --accent: var(--redis); }
+  .project.azure{ --accent: var(--azure); }
+  .project h3{ font-family:'Fraunces', serif; font-size: 21px; font-weight: 700; margin: 0 0 6px; color: var(--text); }
+  .project .project-meta{ font-family:'JetBrains Mono', monospace; font-size: 11.5px; color: var(--text-soft); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.04em; }
   .project p{ color: var(--text-soft); margin: 0 0 16px; font-size: 15px; max-width: 620px; }
   .tag-row{ display:flex; flex-wrap:wrap; gap: 8px; }
-  .tag{
-    font-family:'JetBrains Mono', monospace;
-    font-size: 11.5px;
-    padding: 5px 12px;
-    background: var(--bg-soft);
-    border: 1px solid var(--card-border);
-    border-radius: 100px;
-    color: var(--accent, var(--node));
-  }
+  .tag{ font-family:'JetBrains Mono', monospace; font-size: 11.5px; padding: 5px 12px; background: var(--bg-soft); border: 1px solid var(--card-border); border-radius: 100px; color: var(--accent, var(--node)); }
+
+  /* ===== Education ===== */
+  .edu-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+  .edu-card{ background: var(--card); border: 1px solid var(--card-border); border-radius: 10px; padding: 18px 20px; }
+  .edu-card .degree{ font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+  .edu-card .school{ color: var(--text-soft); font-size: 13.5px; }
 
   /* ===== Contact / footer ===== */
   footer{ padding: 80px 0 100px; }
   .contact-card{
     background: linear-gradient(135deg, var(--node) 0%, var(--dotnet) 55%, var(--sql) 100%);
-    color: #0B0918;
-    border-radius: 16px;
-    padding: 50px;
-    display:flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    align-items:center;
-    justify-content: space-between;
+    color: #0B0918; border-radius: 16px; padding: 50px;
+    display:flex; flex-wrap: wrap; gap: 30px; align-items:center; justify-content: space-between;
   }
   .contact-card h2{ color: #0B0918; margin: 0 0 8px; }
   .contact-card p{ color: rgba(11,9,24,0.75); margin:0; max-width: 380px; font-size: 14.5px; font-weight: 500; }
@@ -260,13 +182,7 @@
   .contact-card .btn.primary:hover{ box-shadow: 0 8px 24px -6px rgba(0,0,0,0.4); }
   .contact-card .btn.ghost{ background: rgba(11,9,24,0.08); color: #0B0918; border: 1px solid rgba(11,9,24,0.25); }
 
-  .fine-print{
-    text-align:center;
-    font-family:'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--text-soft);
-    margin-top: 34px;
-  }
+  .fine-print{ text-align:center; font-family:'JetBrains Mono', monospace; font-size: 12px; color: var(--text-soft); margin-top: 34px; }
 
   @media (max-width: 640px){
     header.hero{ padding: 70px 0 30px; }
@@ -274,6 +190,7 @@
     .project .bar{ height: 3px; width: 40px; }
     .contact-card{ padding: 34px; }
     .blob{ filter: blur(60px); opacity: 0.4; }
+    .job-head{ flex-direction: column; }
   }
 </style>
 </head>
@@ -290,20 +207,55 @@
 
   <header class="hero">
     <div class="eyebrow">Available for opportunities</div>
-    <h1>Sushil</h1>
+    <h1>Sushil Kumar</h1>
     <p class="role">
-      Backend developer building <strong>multi-tenant SaaS systems</strong> —
-      billing ledgers, stored-procedure-driven data layers, and cross-platform
-      apps across messaging, ERP, and logistics platforms.
+      <strong>.NET &amp; Backend Developer</strong> with 10+ years building
+      web admin panels, cross-platform mobile apps, and multi-tenant SaaS
+      billing systems.
     </p>
+    <div class="contact-line">
+      <span>📍 New Delhi, India</span>
+      <a href="mailto:Sushilkumar.kumar29@gmail.com">Sushilkumar.kumar29@gmail.com</a>
+      <a href="tel:+918287049761">+91 82870 49761</a>
+    </div>
     <div class="cta-row">
-      <a class="btn primary" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">
+      <a class="btn primary" href="https://www.linkedin.com/in/ersushil-kumar/" target="_blank" rel="noopener">
         View LinkedIn Profile →
       </a>
-      <a class="btn ghost" href="mailto:your.email@example.com">Email me</a>
+      <a class="btn ghost" href="mailto:Sushilkumar.kumar29@gmail.com">Email me</a>
       <a class="btn ghost" href="https://github.com/sushil1623" target="_blank" rel="noopener">GitHub</a>
     </div>
   </header>
+
+  <section id="experience">
+    <p class="section-tag">Experience</p>
+    <h2>Where I've worked</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">.NET &amp; Xamarin Developer</span>
+        <span class="job-dates">Dec 2018 — Present</span>
+      </div>
+      <div class="job-company">Chetu India Pvt Ltd</div>
+      <ul>
+        <li><strong>Web Admin Panel (.NET Core 3.1 / SQL Server)</strong> — admin panel for a Lock Smith mobile app; service provider registration, driver/technician management, and payment/refund workflows.</li>
+        <li><strong>Alarm Clock App (Xamarin.Forms 4.8)</strong> — cross-platform Android/iOS app with device-shake and pedometer sensors, alarm deactivation via movement, and Google Analytics integration.</li>
+        <li><strong>Clinic Subscription Platform (.NET Core 5.0 / SQL Server)</strong> — multi-team admin panel with Stripe-based monthly/yearly subscriptions and patient content delivery.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">.NET Developer</span>
+        <span class="job-dates">Sep 2014 — Nov 2018</span>
+      </div>
+      <div class="job-company">Kats Infotech Pvt Ltd</div>
+      <ul>
+        <li><strong>E-Bidding Auction Platform (MVC / C# / SQL Server)</strong> — real-time bidding using SignalR, multi-lot/sub-lot item structures, automated email and SMS alerts, and live bid extension logic.</li>
+        <li>Also delivered a School Management web application across this period.</li>
+      </ul>
+    </div>
+  </section>
 
   <section id="skills">
     <p class="section-tag">Stack</p>
@@ -312,17 +264,25 @@
       <div class="skill-card dotnet">
         <h3>.NET Ecosystem</h3>
         <ul>
-          <li>.NET Core / .NET Framework</li>
-          <li>Xamarin.Forms / .NET MAUI</li>
-          <li>Dapper, FluentValidation</li>
+          <li>C#, ASP.NET 4.5, .NET Core 3.1/5.0</li>
+          <li>Xamarin.Forms, .NET MAUI</li>
+          <li>MVC, Web API, SignalR, ADO.NET</li>
         </ul>
       </div>
       <div class="skill-card sql">
         <h3>Databases</h3>
         <ul>
+          <li>MS SQL Server 2019</li>
           <li>MySQL — stored procedures, ledgers</li>
-          <li>MS SQL Server</li>
           <li>MongoDB</li>
+        </ul>
+      </div>
+      <div class="skill-card node">
+        <h3>Web &amp; Frontend</h3>
+        <ul>
+          <li>Angular, JavaScript, Ajax</li>
+          <li>HTML, CSS, ASP</li>
+          <li>Node.js / Express</li>
         </ul>
       </div>
       <div class="skill-card redis">
@@ -330,33 +290,36 @@
         <ul>
           <li>Redis / Redis Streams</li>
           <li>GitHub Copilot</li>
-          <li>DevExpress</li>
+          <li>Dapper, FluentValidation, DevExpress</li>
         </ul>
       </div>
-       <div class="skill-card node">
-        <h3>Languages &amp; Frameworks</h3>
+      <div class="skill-card azure">
+        <h3>Cloud &amp; AI (Azure)</h3>
         <ul>
-          <li>Node.js / Express</li>
-          <li>Angular</li>
-          <li>C#, JavaScript</li>
+          <li>Azure Functions, Logic Apps</li>
+          <li>Azure Blob Storage, WebJobs</li>
+          <li>Azure AI Vision, Content Safety</li>
+          <li>Azure Communication Services (ACS)</li>
+          <li>RAG systems</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section id="projects">
-    <p class="section-tag">Selected work</p>
-    <h2>What I've built</h2>
+  <section id="recent">
+    <p class="section-tag">Recent work</p>
+    <h2>Current focus: multi-tenant SaaS &amp; billing systems</h2>
+    <p class="lede" style="margin-bottom: 30px;">Beyond the resume — my most recent work has centered on backend infrastructure for multi-tenant platforms.</p>
 
     <div class="project node">
       <div class="bar"></div>
       <div>
-        <h3>WhatsApp Business Messaging Platform</h3>
+        <h3>WaBM — WhatsApp Business Messaging Platform</h3>
+        <div class="project-meta">Node.js / Express · Multi-tenant SaaS</div>
         <p>
-          Multi-tenant messaging platform. Designed the coin-based billing and
-          ledger system, a Redis Streams webhook pipeline with crash recovery
-          and dead-letter handling, and a rate-limited campaign scheduler for
-          fair delivery across tenants.
+          Designed the coin-based billing and ledger system, a Redis Streams
+          webhook pipeline with crash recovery and dead-letter handling, and
+          a rate-limited campaign scheduler for fair delivery across tenants.
         </p>
         <div class="tag-row">
           <span class="tag">Node.js / Express</span>
@@ -367,10 +330,11 @@
       </div>
     </div>
 
-    <div class="project dotnet">
+    <div class="project sql">
       <div class="bar"></div>
       <div>
         <h3>Jewelry ERP System</h3>
+        <div class="project-meta">ASP.NET Core · .NET MAUI</div>
         <p>
           Stored-procedure-driven ERP for inventory and tagging. Built bulk
           Excel import pipelines, a layered tag-printing settings chain, and
@@ -385,18 +349,59 @@
       </div>
     </div>
 
-    <div class="project sql">
+    <div class="project azure">
       <div class="bar"></div>
       <div>
-        <h3>Transport &amp; Logistics App</h3>
+        <h3>Azure-based AI &amp; Automation Workflows</h3>
+        <div class="project-meta">Azure Functions · Logic Apps · RAG</div>
         <p>
-          Cross-platform mobile app for logistics operations, built on
-          .NET MAUI for consistent behavior across devices in the field.
+          Built serverless workflows using Azure Functions, Logic Apps, and
+          WebJobs backed by Blob Storage, plus AI-driven features using
+          Azure AI Vision, Content Safety, and Azure Communication Services.
+          Implemented a Retrieval-Augmented Generation (RAG) pipeline for
+          context-aware AI responses.
         </p>
         <div class="tag-row">
-          <span class="tag">.NET MAUI</span>
-          <span class="tag">C#</span>
+          <span class="tag">Azure Functions</span>
+          <span class="tag">Logic Apps</span>
+          <span class="tag">Blob Storage</span>
+          <span class="tag">Azure AI Vision</span>
+          <span class="tag">RAG</span>
         </div>
+      </div>
+    </div>
+    <div class="project dotnet">
+      <div class="bar"></div>
+      <div>
+        <h3>E-Bidding Web Application</h3>
+        <div class="project-meta">MVC · C# · SQL Server · SignalR</div>
+        <p>
+          Real-time auction platform built with SignalR for live bid updates
+          between suppliers and admins. Supported multi-lot/sub-lot item
+          structures, nominal and percentage-based bidding, automated
+          email/SMS alerts, and live bid-time extension logic.
+        </p>
+        <div class="tag-row">
+          <span class="tag">MVC</span>
+          <span class="tag">C#</span>
+          <span class="tag">SQL Server</span>
+          <span class="tag">SignalR</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <p class="section-tag">Education</p>
+    <h2>Qualifications</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="degree">MCA</div>
+        <div class="school">Mahatma Gandhi University · 2012–2015</div>
+      </div>
+      <div class="edu-card">
+        <div class="degree">BCA</div>
+        <div class="school">IGNOU · 2008–2011</div>
       </div>
     </div>
   </section>
@@ -405,14 +410,14 @@
     <div class="contact-card">
       <div>
         <h2>Let's connect</h2>
-        <p>The fastest way to reach me is LinkedIn or email — happy to talk through roles, projects, or backend architecture.</p>
+        <p>The fastest way to reach me is LinkedIn, email, or phone — happy to talk through roles, projects, or backend architecture.</p>
       </div>
       <div class="cta-row">
-        <a class="btn primary" href="https://www.linkedin.com/in/ersushil-kumar/" target="_blank" rel="noopener">LinkedIn →</a>
-        <a class="btn ghost" href="mailto:sushilkumar.kumar29@gmail.com">Email</a>
+        <a class="btn primary" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn →</a>
+        <a class="btn ghost" href="mailto:Sushilkumar.kumar29@gmail.com">Email</a>
       </div>
     </div>
-    <p class="fine-print">Built &amp; maintained by Sushil</p>
+    <p class="fine-print">Built &amp; maintained by Sushil Kumar</p>
   </footer>
 
 </div>
